@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 1 0 0;
+        --foreground: 0.15 0 0;
+        --card: 0.98 0 0;
+        --card-foreground: 0.15 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        --primary: 0.50 0.20 35;
+        --primary-foreground: 0.98 0 0;
+        --secondary: 0.92 0.02 60;
+        --secondary-foreground: 0.15 0 0;
+        --muted: 0.94 0.01 60;
+        --muted-foreground: 0.50 0.02 60;
+        --accent: 0.92 0.02 60;
+        --accent-foreground: 0.15 0 0;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.88 0.01 60;
+        --input: 0.88 0.01 60;
+        --ring: 0.50 0.20 35;
+        --chart-1: 0.65 0.20 40;
+        --chart-2: 0.60 0.12 180;
+        --chart-3: 0.40 0.08 220;
+        --chart-4: 0.82 0.18 80;
+        --chart-5: 0.76 0.18 70;
+        --sidebar: 0.98 0 0;
+        --sidebar-foreground: 0.15 0 0;
+        --sidebar-primary: 0.50 0.20 35;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.92 0.02 60;
+        --sidebar-accent-foreground: 0.15 0 0;
+        --sidebar-border: 0.88 0.01 60;
+        --sidebar-ring: 0.70 0 0;
+    }
+
+    .dark {
+        --background: 0.12 0.01 260;
+        --foreground: 0.98 0.01 60;
+        --card: 0.16 0.01 260;
+        --card-foreground: 0.98 0.01 60;
+        --popover: 0.18 0.01 260;
+        --popover-foreground: 0.98 0.01 60;
+        --primary: 0.65 0.20 35;
+        --primary-foreground: 0.12 0.01 260;
+        --secondary: 0.22 0.02 260;
+        --secondary-foreground: 0.98 0.01 60;
+        --muted: 0.22 0.02 260;
+        --muted-foreground: 0.68 0.02 260;
+        --accent: 0.28 0.03 260;
+        --accent-foreground: 0.98 0.01 60;
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.98 0.01 60;
+        --border: 0.25 0.02 260;
+        --input: 0.25 0.02 260;
+        --ring: 0.65 0.20 35;
+        --chart-1: 0.50 0.24 270;
+        --chart-2: 0.70 0.17 160;
+        --chart-3: 0.76 0.18 70;
+        --chart-4: 0.62 0.26 300;
+        --chart-5: 0.64 0.24 15;
+        --sidebar: 0.16 0.01 260;
+        --sidebar-foreground: 0.98 0.01 60;
+        --sidebar-primary: 0.65 0.20 35;
+        --sidebar-primary-foreground: 0.98 0.01 60;
+        --sidebar-accent: 0.22 0.02 260;
+        --sidebar-accent-foreground: 0.98 0.01 60;
+        --sidebar-border: 0.25 0.02 260;
+        --sidebar-ring: 0.45 0.02 260;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .animate-in {
+        animation-fill-mode: both;
+    }
+    
+    .fade-in {
+        animation: fade-in 0.5s ease-out;
+    }
+    
+    .slide-in-from-bottom-4 {
+        animation: slide-in-from-bottom 0.5s ease-out;
+    }
+    
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slide-in-from-bottom {
+        from {
+            transform: translateY(1rem);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+/* Image optimization for crisp, sharp rendering */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Ensure text is crisp and clear */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}

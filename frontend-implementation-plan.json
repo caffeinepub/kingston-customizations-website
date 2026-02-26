@@ -1,0 +1,35 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Set uploaded image as static hero logo, display instantly without flash",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "summary": "Replace backend-fetched logo with static asset reference in Hero and Header components to eliminate loading flash",
+      "acceptanceCriteria": [
+        "The uploaded Kingston Customizations logo (cream background, dark brown crown and script) is visible in the Hero section immediately on page load.",
+        "No other image, placeholder, skeleton, or blank flash appears before the logo renders.",
+        "The logo is served from a static asset path (e.g., /assets/generated/logo.png) and does not depend on a backend fetch to display.",
+        "All other Hero component content (headline, tagline, layout, styling) remains unchanged.",
+        "The logo also does not flash in the Header component — if the Header previously used the backend-fetched logo, it should also reference the same static asset so it renders instantly."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Save the uploaded Kingston Customizations logo image (IMG_2219.jpeg — cream background with dark brown crown and script lettering) as a static PNG asset at this path. This file will be served directly by the web server and loaded instantly without any backend fetch."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Remove the useGetLogoImage hook call and loading state. Replace the backend-fetched logo src with a direct reference to the static asset path '/assets/generated/logo.dim_512x512.png'. Keep all other content (headline, tagline, container styling, layout) unchanged. Ensure the img element loads the static asset immediately with no conditional rendering or placeholder."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Remove the useGetLogoImage hook call and loading state. Replace the backend-fetched logo src with a direct reference to the static asset path '/assets/generated/logo.dim_512x512.png'. Keep all other header functionality (scroll behavior, navigation links, admin dropdown) unchanged. Ensure the logo renders instantly on page load with no flash or placeholder."
+        }
+      ]
+    }
+  ]
+}

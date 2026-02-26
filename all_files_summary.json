@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Main Motoko actor for the Kingston Customizations backend, handling blob storage for homepage and logo images, user profile management, and role-based access control with admin/user permission checks.",
+  "feature_evidence.json": "Feature evidence report documenting that the Kingston Customizations logo is saved as a static asset and loaded directly in the Hero and Header components without backend fetching.",
+  "frontend-file-summaries.txt": "JSON map of short summaries for each frontend source file, describing the purpose and key implementation details of every component, page, hook, and config file.",
+  "frontend/index.html": "Root HTML entry point for the React app, setting the page title to 'KingstonCustomizations LLC Website' and mounting the app via the /src/main.tsx module script.",
+  "frontend/src/App.tsx": "Root React component that configures TanStack Router with home (/) and admin (/admin) routes inside a RootLayout wrapped by ThemeProvider and QueryClientProvider.",
+  "frontend/src/components/About.tsx": "About Us section component with a dark slate gradient background, company description for Kingston Customizations LLC, and three value-proposition cards (Experience, Integrity, Excellence) with yellow-400 icon accents.",
+  "frontend/src/components/Contact.tsx": "Contact section displaying email, phone (call or text), business hours, and an Arizona location badge, styled with yellow-400 accents and a dark business-hours card.",
+  "frontend/src/components/Footer.tsx": "Site footer with a dark slate gradient, company logo, contact info, services quick-links, and a credentials/promise column, all using yellow-400 accent colors and Kingston Customizations LLC branding.",
+  "frontend/src/components/Gallery.tsx": "Renders a responsive image gallery grid with 10 project photos, supporting a lightbox modal with previous/next navigation and category badges on hover.",
+  "frontend/src/components/Header.tsx": "Fixed top navigation header with logo, branding, scroll-aware styling, a dropdown menu for section navigation, and an admin panel link.",
+  "frontend/src/components/Hero.tsx": "Full-screen hero section displaying the company logo and a headline tagline on a white background.",
+  "frontend/src/components/Services.tsx": "Displays a grid of 8 service cards (remodels, carpentry, drywall, etc.) each with an image, title, and description on a dark gradient background.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and caches an authenticated or anonymous ICP backend actor based on the current Internet Identity, invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an InternetIdentityProvider context and useInternetIdentity hook for managing DFINITY AuthClient login, logout, and identity state with status tracking.",
+  "frontend/src/hooks/useQueries.ts": "Collection of React Query hooks for backend interactions including user profile CRUD, admin checks, and image upload/retrieval mutations for homepage and logo images.",
+  "frontend/src/index.css": "Global CSS file that sets up Tailwind directives, defines light/dark mode CSS custom properties using OKLCH color values, and adds utility animations (fade-in, slide-in) plus image/text rendering optimizations.",
+  "frontend/src/main.tsx": "React app entry point that wraps the App component with QueryClientProvider (React Query) and InternetIdentityProvider before mounting to the DOM.",
+  "frontend/src/pages/AdminPage.tsx": "Admin page component that handles Internet Identity authentication, user profile creation, and admin-only image uploads (homepage image and logo) with file validation and previews.",
+  "frontend/src/pages/HomePage.tsx": "Main public-facing page that composes all landing page sections (Header, Hero, Services, Gallery, About, Contact, Footer) and implements scroll-based header show/hide behavior with smooth section navigation.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration that maps OKLCH CSS variables to semantic color tokens, extends theme with custom border radius, shadows, and accordion animations, and registers typography, container-queries, and animate plugins.",
+  "project_state.json": "Project state metadata tracking the current version, known issues (logo image flash on load), existing fix features for Hero and Header components, and the requirement to use a static asset path for the Kingston Customizations logo."
+}

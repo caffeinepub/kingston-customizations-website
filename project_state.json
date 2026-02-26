@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Website project where the user wants a specific image to be the hero logo, loading instantly without flashing other images first. User prefers Version 49 of the site.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Logo/image flashes a different image briefly before the correct one appears on load"
+  ],
+  "isFixRequest": true,
+  "imageRequirements": "## Required Images\n- Kingston Customizations logo: cream/off-white background with a dark brown royal crown above the script word 'Kingston' and arched uppercase 'CUSTOMIZATIONS' text below (logo.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-fix-the-logo-image-flash-in-the-hero-component-so-the-correct-logo-appears-instantly-without-briefly-showing-a-placeholder-skeleton-or-incorrect-image-first-the-logo-should-only-render-once-the-correct-image-data-is-ready-until-then-show-nothing-or-a-blank-space-rather-than-a-transitional-image-that-flashes",
+      "title": "Fix the logo image flash in the Hero component so the correct logo appears instantly without briefly showing a placeholder, skeleton, or incorrect image first. The logo should only render once the correct image data is ready; until then, show nothing or a blank space rather than a transitional image that flashes.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-logo-image-flash-in-the-header-component-so-the-correct-logo-appears-instantly-without-briefly-showing-a-placeholder-skeleton-or-incorrect-image-first-same-behavior-as-req-1-only-render-the-logo-once-the-correct-image-data-is-available",
+      "title": "Fix the logo image flash in the Header component so the correct logo appears instantly without briefly showing a placeholder, skeleton, or incorrect image first. Same behavior as REQ-1 — only render the logo once the correct image data is available.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-save-the-uploaded-kingston-customizations-logo-image-img-2219-jpeg-cream-background-with-dark-brown-crown-and-script-lettering-as-a-static-asset-at-frontend-public-assets-generated-logo-png-and-use-it-as-the-hero-logo-image-in-the-hero-component-the-image-must-be-loaded-directly-from-this-static-path-not-fetched-from-the-backend-so-it-appears-instantly-on-page-load-with-no-flash-placeholder-or-other-image-showing-first-all-other-content-and-layout-in-the-hero-component-must-remain-unchanged",
+      "title": "Save the uploaded Kingston Customizations logo image (IMG_2219.jpeg — cream background with dark brown crown and script lettering) as a static asset at frontend/public/assets/generated/logo.png and use it as the hero logo image in the Hero component. The image must be loaded directly from this static path (not fetched from the backend) so it appears instantly on page load with no flash, placeholder, or other image showing first. All other content and layout in the Hero component must remain unchanged.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "gameProjectType": "none",
+  "projectName": "Fix logo/image flash on load in Hero and Header components",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
