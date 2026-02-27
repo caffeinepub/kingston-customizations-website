@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Save the uploaded Kingston Customizations logo as a static asset and use it as the hero logo image so it appears instantly on page load with no flash.
+**Goal:** Replace all existing photos in the "Our Work" gallery section with 14 newly uploaded real project photos.
 
 **Planned changes:**
-- Save IMG_2219.jpeg as a static asset at `frontend/public/assets/generated/logo.png`
-- Update the Hero component to load the logo directly from the static path `/assets/generated/logo.png` instead of a backend-fetched source
-- Update the Header component to also reference the same static asset path so it renders instantly without flash
-- No other changes to Hero or Header content, layout, or styling
+- Save all 14 uploaded project photos as static assets in `frontend/public/assets/generated/` with filenames `work-01.jpg` through `work-14.jpg`
+- Update the Gallery (Our Work) component to remove all previously used photos and replace them with the 14 new images loaded from `/assets/generated/work-01.jpg` through `work-14.jpg`
+- Keep all existing gallery UI elements unchanged (responsive grid layout, lightbox modal, previous/next navigation, category badges)
 
-**User-visible outcome:** The Kingston Customizations logo (cream background with dark brown crown and script lettering) appears immediately in the Hero section on page load with no placeholder, blank flash, or other image showing first.
+**User-visible outcome:** The "Our Work" section displays exactly the 14 new real project photos and no previously existing placeholder or generated images.

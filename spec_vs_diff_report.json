@@ -1,27 +1,39 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T12:46:39.906Z",
-  "summary": "The diff implements static logo loading in Hero and Header components, but uses `/assets/IMG_2219.jpeg` as the source path instead of the required `/assets/generated/logo.png`. Additionally, the actual image file is not added to `frontend/public/assets/generated/logo.png` as specified in REQ-3.",
+  "generatedAt": "2026-02-27T01:16:06.471Z",
+  "summary": "The diff shows Gallery.tsx was updated to reference 14 new project images, but the image filenames used in the component have dimension suffixes (e.g., work-01.dim_1080x1350.jpg) rather than the simple work-01.jpg through work-14.jpg filenames specified in the requirements. Additionally, no actual image files were added to frontend/public/assets/generated/ — the diff shows 0 added files, meaning REQ-4 (saving the 14 static assets) is not implemented.",
   "missing_requirements": [
     {
-      "id": "REQ-3",
-      "requirement": "Save the uploaded Kingston Customizations logo image as a static asset at frontend/public/assets/generated/logo.png and reference it from that path.",
-      "reason": "The diff uses `/assets/IMG_2219.jpeg` as the image source in both Hero.tsx and Header.tsx instead of the required `/assets/generated/logo.png`. Furthermore, no new file was added to `frontend/public/assets/generated/logo.png` — the ADDED FILES section shows none.",
+      "id": "REQ-4",
+      "requirement": "Save all 14 newly uploaded project photos as static assets in frontend/public/assets/generated/ using filenames work-01.jpg through work-14.jpg.",
+      "reason": "The diff shows 0 added files. No image files were added to frontend/public/assets/generated/. The physical static assets are absent.",
       "evidence": [
-        "frontend/src/components/Hero.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend-file-summaries.txt"
+        "frontend/src/components/Gallery.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "All images must be loaded from /assets/generated/work-01.jpg through work-14.jpg as static paths (not with dimension suffixes).",
+      "reason": "Gallery.tsx uses filenames with dimension suffixes such as work-01.dim_1080x1350.jpg and work-02.dim_1280x960.jpg instead of the required plain filenames work-01.jpg through work-14.jpg.",
+      "evidence": [
+        "frontend/src/components/Gallery.tsx"
       ]
     }
   ],
-  "hallucinated_features": [],
-  "confidence": 0.9,
+  "hallucinated_features": [
+    {
+      "description": "Image filenames include dimension suffixes (e.g., work-01.dim_1080x1350.jpg, work-02.dim_1280x960.jpg) that were never requested.",
+      "reason": "The build request specifies plain filenames work-01.jpg through work-14.jpg. The component uses dimension-annotated filenames not present in any requirement.",
+      "evidence": [
+        "frontend/src/components/Gallery.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.93,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/Header.tsx",
-    "frontend/src/components/Hero.tsx",
-    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/components/Gallery.tsx",
     "project_state.json"
   ]
 }

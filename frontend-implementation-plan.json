@@ -1,33 +1,102 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Set uploaded image as static hero logo, display instantly without flash",
+  "title": "Replace Our Work Section Photos with New Uploaded Project Photos",
   "requirements": [
     {
-      "id": "REQ-3",
-      "summary": "Replace backend-fetched logo with static asset reference in Hero and Header components to eliminate loading flash",
+      "id": "REQ-4",
+      "summary": "Save all 14 newly uploaded project photos as static assets in frontend/public/assets/generated/ with standardized filenames",
       "acceptanceCriteria": [
-        "The uploaded Kingston Customizations logo (cream background, dark brown crown and script) is visible in the Hero section immediately on page load.",
-        "No other image, placeholder, skeleton, or blank flash appears before the logo renders.",
-        "The logo is served from a static asset path (e.g., /assets/generated/logo.png) and does not depend on a backend fetch to display.",
-        "All other Hero component content (headline, tagline, layout, styling) remains unchanged.",
-        "The logo also does not flash in the Header component — if the Header previously used the backend-fetched logo, it should also reference the same static asset so it renders instantly."
+        "All 14 uploaded images are saved as static assets under frontend/public/assets/generated/ with the filenames work-01.jpg through work-14.jpg.",
+        "Each file is accessible via the /assets/generated/ static path in the browser."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/logo.dim_512x512.png",
+          "path": "frontend/public/assets/generated/work-01.dim_1080x1350.jpg",
           "operation": "create",
-          "description": "Save the uploaded Kingston Customizations logo image (IMG_2219.jpeg — cream background with dark brown crown and script lettering) as a static PNG asset at this path. This file will be served directly by the web server and loaded instantly without any backend fetch."
+          "description": "Save the uploaded project photo '60417559408__EA07A836-4DBF-4202-B2B6-336CE9DC4F64.jpeg' showing outdoor kitchen construction framing with galvanized steel studs on a brick paver patio with workers visible in background as a static asset with dimensions 1080x1350."
         },
         {
-          "path": "frontend/src/components/Hero.tsx",
-          "operation": "modify",
-          "description": "Remove the useGetLogoImage hook call and loading state. Replace the backend-fetched logo src with a direct reference to the static asset path '/assets/generated/logo.dim_512x512.png'. Keep all other content (headline, tagline, container styling, layout) unchanged. Ensure the img element loads the static asset immediately with no conditional rendering or placeholder."
+          "path": "frontend/public/assets/generated/work-02.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_2193.jpeg' showing stone-clad outdoor entertainment wall with recessed TV niche and linear gas fireplace insert, viewed from side angle as a static asset with dimensions 1280x960."
         },
         {
-          "path": "frontend/src/components/Header.tsx",
+          "path": "frontend/public/assets/generated/work-03.dim_1080x1350.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_7416.jpeg' showing completed stainless steel built-in grill in a smooth stucco outdoor kitchen island with travertine countertop and tile flooring as a static asset with dimensions 1080x1350."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-04.dim_1080x1350.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_7407.jpeg' showing modern outdoor kitchen island with travertine tile countertop and stacked stone veneer accent panel, under construction as a static asset with dimensions 1080x1350."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-05.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_3062.jpeg' showing aerial view of outdoor patio with stone veneer walls, wood ceiling fan, linear fireplace, and artificial turf as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-06.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo '60418777983__B4A1B7E7-D0BE-4D92-827F-4719EDF3DE81.jpeg' showing outdoor kitchen frame wrapped in Wonderboard Lite cement board beside a backyard pool, pre-stucco stage as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-07.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_3573.jpeg' showing outdoor kitchen frame wrapped in blue board insulation inside a garage, showing U-shaped layout as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-08.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_0619.jpeg' showing covered outdoor living space with stacked stone fireplace wall, ceiling fan, Kamado grill, and teal patio furniture as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-09.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_2833.jpeg' showing outdoor kitchen frame built with galvanized steel studs and Hardiebacker board in a desert backyard with gravel as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-10.dim_1080x1350.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_7766.jpeg' showing luxury backyard with rectangular stone fire pit, travertine tile deck, rectangular pool, spa, artificial turf, and pergola as a static asset with dimensions 1080x1350."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-11.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_2569.jpeg' showing outdoor kitchen island under construction with cement board cladding, worker measuring, travertine tile flooring as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-12.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_0039.jpeg' showing close-up view of galvanized steel joist framing for an outdoor kitchen roof structure against a bright blue sky as a static asset with dimensions 1280x960."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-13.dim_1080x1350.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_7794.jpeg' showing completed outdoor kitchen island with stacked stone veneer, stainless steel grill, three-drawer unit, and red Kamado grill at dusk as a static asset with dimensions 1080x1350."
+        },
+        {
+          "path": "frontend/public/assets/generated/work-14.dim_1280x960.jpg",
+          "operation": "create",
+          "description": "Save the uploaded project photo 'IMG_2641.jpeg' showing galvanized steel outdoor kitchen frame laid flat on a driveway showing grill cutout and access door openings as a static asset with dimensions 1280x960."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Update the Gallery (Our Work) component to display the 14 new project photos from static assets, removing all previous photos while preserving existing layout and functionality",
+      "acceptanceCriteria": [
+        "The Our Work / Gallery section displays exactly the 14 new project photos and no previously existing photos.",
+        "All images are loaded from /assets/generated/work-01.jpg through work-14.jpg as static paths (not fetched from the backend).",
+        "The responsive grid layout, lightbox modal, previous/next navigation, and category badges remain intact and functional.",
+        "No placeholder images, broken images, or old photos appear in the gallery."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Gallery.tsx",
           "operation": "modify",
-          "description": "Remove the useGetLogoImage hook call and loading state. Replace the backend-fetched logo src with a direct reference to the static asset path '/assets/generated/logo.dim_512x512.png'. Keep all other header functionality (scroll behavior, navigation links, admin dropdown) unchanged. Ensure the logo renders instantly on page load with no flash or placeholder."
+          "description": "Replace the existing gallery images array with the 14 new project photos using paths frontend/public/assets/generated/work-01.dim_1080x1350.jpg through frontend/public/assets/generated/work-14.dim_1280x960.jpg. Update the image objects to reference these static asset paths and preserve all existing gallery functionality including the responsive grid layout, lightbox modal with previous/next navigation, and category badges. Ensure proper aspect ratio handling for mixed 1080x1350 and 1280x960 dimensions. Do not modify the gallery layout logic, modal controls, or any other UI elements."
         }
       ]
     }

@@ -1,44 +1,74 @@
 {
   "kind": "build_request",
-  "title": "Set uploaded image as static hero logo, display instantly without flash",
+  "title": "Replace Our Work Section Photos with New Uploaded Project Photos",
   "projectName": "Kingston Customizations",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-3",
-      "text": "Save the uploaded Kingston Customizations logo image (IMG_2219.jpeg — cream background with dark brown crown and script lettering) as a static asset at frontend/public/assets/generated/logo.png and use it as the hero logo image in the Hero component. The image must be loaded directly from this static path (not fetched from the backend) so it appears instantly on page load with no flash, placeholder, or other image showing first. All other content and layout in the Hero component must remain unchanged.",
+      "id": "REQ-4",
+      "text": "Save all 14 newly uploaded project photos as static assets in frontend/public/assets/generated/ using the following filenames: work-01.jpg (60417559408__EA07A836-4DBF-4202-B2B6-336CE9DC4F64.jpeg), work-02.jpg (IMG_2193.jpeg), work-03.jpg (IMG_7416.jpeg), work-04.jpg (IMG_7407.jpeg), work-05.jpg (IMG_3062.jpeg), work-06.jpg (60418777983__B4A1B7E7-D0BE-4D92-827F-4719EDF3DE81.jpeg), work-07.jpg (IMG_3573.jpeg), work-08.jpg (IMG_0619.jpeg), work-09.jpg (IMG_2833.jpeg), work-10.jpg (IMG_7766.jpeg), work-11.jpg (IMG_2569.jpeg), work-12.jpg (IMG_0039.jpeg), work-13.jpg (IMG_7794.jpeg), work-14.jpg (IMG_2641.jpeg).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "I need this image to be the hero logo image. I need it to show immediately without other images showing first. keep everything else the same"
+          "the photos that I just added, put those photos to the our work",
+          "The photos that you have recorded, I need those to the our work section"
         ]
       },
       "acceptanceCriteria": [
-        "The uploaded Kingston Customizations logo (cream background, dark brown crown and script) is visible in the Hero section immediately on page load.",
-        "No other image, placeholder, skeleton, or blank flash appears before the logo renders.",
-        "The logo is served from a static asset path (e.g., /assets/generated/logo.png) and does not depend on a backend fetch to display.",
-        "All other Hero component content (headline, tagline, layout, styling) remains unchanged.",
-        "The logo also does not flash in the Header component — if the Header previously used the backend-fetched logo, it should also reference the same static asset so it renders instantly."
+        "All 14 uploaded images are saved as static assets under frontend/public/assets/generated/ with the filenames work-01.jpg through work-14.jpg.",
+        "Each file is accessible via the /assets/generated/ static path in the browser."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Update the Gallery (Our Work) component to remove all previously used project photos and replace them exclusively with the 14 new static assets (work-01.jpg through work-14.jpg) loaded from /assets/generated/. The gallery layout, lightbox functionality, navigation, and all other UI elements must remain unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Take off all the photos to the our Work section",
+          "put those photos to the our work"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Our Work / Gallery section displays exactly the 14 new project photos and no previously existing photos.",
+        "All images are loaded from /assets/generated/work-01.jpg through work-14.jpg as static paths (not fetched from the backend).",
+        "The responsive grid layout, lightbox modal, previous/next navigation, and category badges remain intact and functional.",
+        "No placeholder images, broken images, or old photos appear in the gallery."
       ]
     }
   ],
   "constraints": [
-    "Do not change any content, layout, or styling in the Hero component beyond replacing the logo source.",
-    "Do not modify immutable frontend paths (hooks, main.tsx, ui components).",
-    "The logo must be served as a static file — do not route it through the backend."
+    "Do not modify backend image storage or retrieval logic.",
+    "Do not alter the gallery layout, lightbox behavior, or any other UI outside of the photo source list.",
+    "Images must be loaded as static assets from frontend/public/assets/generated/, not fetched from the backend."
   ],
   "nonGoals": [
-    "Redesigning or restyling the Hero section.",
-    "Changing any other page sections (Header, Footer, Services, Gallery, About, Contact).",
-    "Modifying backend image storage or upload logic.",
-    "Removing the admin ability to upload logos via the backend."
+    "Adding new gallery features such as filtering, categories, or pagination.",
+    "Changing the visual design or layout of the Our Work section.",
+    "Modifying any other section of the website."
   ],
   "imageRequirements": {
     "required": [
-      "Kingston Customizations logo: cream/off-white background with a dark brown royal crown above the script word 'Kingston' and arched uppercase 'CUSTOMIZATIONS' text below (logo.dim_512x512.png)"
+      "Outdoor kitchen construction framing with galvanized steel studs on a brick paver patio, workers visible in background (work-01.dim_1080x1350.jpg)",
+      "Stone-clad outdoor entertainment wall with recessed TV niche and linear gas fireplace insert, viewed from side angle (work-02.dim_1280x960.jpg)",
+      "Completed stainless steel built-in grill in a smooth stucco outdoor kitchen island with travertine countertop and tile flooring (work-03.dim_1080x1350.jpg)",
+      "Modern outdoor kitchen island with travertine tile countertop and stacked stone veneer accent panel, under construction (work-04.dim_1080x1350.jpg)",
+      "Aerial view of outdoor patio with stone veneer walls, wood ceiling fan, linear fireplace, and artificial turf (work-05.dim_1280x960.jpg)",
+      "Outdoor kitchen frame wrapped in Wonderboard Lite cement board beside a backyard pool, pre-stucco stage (work-06.dim_1280x960.jpg)",
+      "Outdoor kitchen frame wrapped in blue board insulation inside a garage, showing U-shaped layout (work-07.dim_1280x960.jpg)",
+      "Covered outdoor living space with stacked stone fireplace wall, ceiling fan, Kamado grill, and teal patio furniture (work-08.dim_1280x960.jpg)",
+      "Outdoor kitchen frame built with galvanized steel studs and Hardiebacker board in a desert backyard with gravel (work-09.dim_1280x960.jpg)",
+      "Luxury backyard with rectangular stone fire pit, travertine tile deck, rectangular pool, spa, artificial turf, and pergola (work-10.dim_1080x1350.jpg)",
+      "Outdoor kitchen island under construction with cement board cladding, worker measuring, travertine tile flooring (work-11.dim_1280x960.jpg)",
+      "Close-up view of galvanized steel joist framing for an outdoor kitchen roof structure against a bright blue sky (work-12.dim_1280x960.jpg)",
+      "Completed outdoor kitchen island with stacked stone veneer, stainless steel grill, three-drawer unit, and red Kamado grill at dusk (work-13.dim_1080x1350.jpg)",
+      "Galvanized steel outdoor kitchen frame laid flat on a driveway showing grill cutout and access door openings (work-14.dim_1280x960.jpg)"
     ],
     "edits": []
   }
